@@ -1,0 +1,128 @@
+<style type="text/css">
+
+body {
+  width:760px;
+  margin:40px auto;
+  font-family: georgia, sans;
+}
+
+h1 {
+  border-bottom:1px solid #dedede;
+  margin-bottom:20px;
+  padding-bottom:20px;
+}
+
+.selected{
+	background-color:red;
+border:1px solid #dedede;
+}
+
+.drug-box{
+	height:100px;
+	overflow:hidden;
+	padding:20px;
+	float:left;
+}
+
+</style>
+
+<h1>Starter interactive</h1>
+
+
+<div class="drug-box" data-num="2000">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/excedrin.jpg">
+	</div>
+<div class="drug-box" data-num="2600">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/nyquil.jpg">
+	</div>
+<div class="drug-box" data-num="3840">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/robitussin.jpg">
+	</div>
+<div class="drug-box" data-num="3250">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/sudafed.jpg">
+</div>
+<div class="drug-box" data-num="2000">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/alkaseltzer.jpg">
+</div>
+<div class="drug-box" data-num="3900">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/theraflu.jpg">
+</div>
+<div class="drug-box" data-num="3000">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/tylenolextrastrngth.jpg">
+</div>
+<div class="drug-box" data-num="3900">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/zicam.jpg">
+</div>
+<div class="drug-box" data-num="4000">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/anacin.jpg">
+</div>
+<div class="drug-box" data-num="800">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/childrenstylenol.jpg">
+</div>
+<div class="drug-box" data-num="800">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/dimetapp.jpg">
+</div>
+<div class="drug-box" data-num="800">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/panadol.jpg">
+</div>
+<div class="drug-box" data-num="1300">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/dayquil.jpg">
+</div>
+<div class="drug-box" data-num="3900">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/coricidin.jpg">
+</div>
+<div class="drug-box" data-num="4000">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/tylenolwcodeine.jpg">
+	</div>
+<div class="drug-box" data-num="3960">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/vicodin.jpg">
+</div>
+<div class="drug-box" data-num="3900">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/percoset.jpg">
+</div>
+<div class="drug-box" data-num="3900">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/hydrocodone.jpg">
+</div>
+<div class="drug-box" data-num="3900">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/oxycodone.jpg">
+</div>
+<div class="drug-box" data-num="2600">
+	<img src= "http://propublica.s3.amazonaws.com/projects/projectx/labels/ultracet.jpg">
+	</div>
+
+	<div class="calculator">
+		Testing Text
+	</div>
+
+<script type="text/javascript" src="jquery.js"></script>
+
+<script type="text/javascript">
+
+var total=0;
+var maxtotal=7000;
+$(".drug-box").click( function() {
+	var dose=$(this).attr("data-num");
+	var alreadyadded=$(this).hasClass("selected")
+$(this).toggleClass("selected")
+if(alreadyadded){
+
+total-=parseInt(dose)
+
+} else {
+	total+=parseInt(dose)
+}
+
+if (total>maxtotal) {
+	alert("You Are Dead!!")
+};
+
+$( "div.calculator" ).text(total)
+
+console.log (total)
+
+})
+
+// this is how you comment in javascript.
+console.log("this is where javascript will go!");
+
+</script>
